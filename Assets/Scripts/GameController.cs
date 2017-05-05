@@ -14,8 +14,9 @@ public class GameController : MonoBehaviour {
 
     void Update ()
     {
+        // time setting
         timeRecord += Time.deltaTime;
-	}
+    }
 
     public float GetTime()
     {
