@@ -53,6 +53,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   missileSpeed: 0.1
+  xRange: {x: -5, y: 5}
+  yRange: {x: -5, y: 5}
 --- !u!212 &212743493844700566
 SpriteRenderer:
   m_ObjectHideFlags: 1
