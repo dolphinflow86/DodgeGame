@@ -16,4 +16,9 @@ public class GameController : MonoBehaviour {
     {
         timeRecord += Time.deltaTime;
 	}
+
+    public float GetTime()
+    {
+        return (timeRecord);
+    }
 }
