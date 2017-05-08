@@ -191,7 +191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bb226987ceac81439d7d1c3816fc309, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnMonsterRatio: {x: 0, y: 0}
+  spawnMissileRatio: 8
 --- !u!1 &147777422
 GameObject:
   m_ObjectHideFlags: 0

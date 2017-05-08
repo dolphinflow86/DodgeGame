@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour {
 
-    public Vector2 spawnMonsterRatio;
+    public float enemySpawnRatio;
     private float timeRecord;
 
 	void Start ()
@@ -21,5 +21,10 @@ public class GameController : MonoBehaviour {
     public float GetTime()
     {
         return (timeRecord);
+    }
+
+    public float GetEnemySpawnRatio()
+    {
+        return (enemySpawnRatio);
     }
 }

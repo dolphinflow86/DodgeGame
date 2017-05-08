@@ -77,6 +77,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5eaaf60feaed6ac4cbe5421a25c191f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToSpawn: {fileID: 1516784673223660, guid: 2efe1d808ba83784f93a7a6498621742,
-    type: 2}
+  badObject: {fileID: 1516784673223660, guid: 42f9c89bf020aa94eb80d597bf6bf452, type: 2}
+  goodObject: {fileID: 1516784673223660, guid: 2efe1d808ba83784f93a7a6498621742, type: 2}
   rateOfSpawn: 1
