@@ -16,21 +16,8 @@ public class PlayerController : MonoBehaviour {
 		
 	}
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter2D(Collision2D col)
     {
-        Debug.Log("cndehf!!!!!!!!!");
-        Destroy(collision.gameObject);
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        Debug.Log("cndehf!!!!!!!!!");
-        Destroy(collision.gameObject);
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        Debug.Log("cndehf!!!!!!!!!");
-        Destroy(other.gameObject);
+        Destroy(col.gameObject);
     }
 }
