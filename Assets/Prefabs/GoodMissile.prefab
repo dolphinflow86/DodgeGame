@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 58705457985478004}
   m_Layer: 0
   m_Name: GoodMissile
-  m_TagString: Untagged
+  m_TagString: GoodMissile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71,6 +71,7 @@ MonoBehaviour:
   missileSpeed: 0.1
   xRange: {x: -5, y: 5}
   yRange: {x: -5, y: 5}
+  damage: 15
 --- !u!212 &212743493844700566
 SpriteRenderer:
   m_ObjectHideFlags: 1

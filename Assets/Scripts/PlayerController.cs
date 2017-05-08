@@ -16,8 +16,35 @@ public class PlayerController : MonoBehaviour {
 		
 	}
 
+    public void IncreaseHP(float value)
+    {
+        playerHP += value;
+    }
+
+    public void DecreaseHP(float value)
+    {
+        playerHP -= value;
+    }
+
     private void OnCollisionEnter2D(Collision2D col)
     {
+        Attacker attacker = col.gameObject.GetComponent<Attacker>();
+        if(null == attacker)
+        {
+            return;
+        }
+
+        if (col.gameObject.tag == "BadMissile")
+        {
+            attacker.AttackPlayer();
+        }
+        else if(col.gameObject.tag == "GoodMissile")
+        {
+            attacker.FeedPlayer();
+        }
+
+        Debug.Log(playerHP);
+
         Destroy(col.gameObject);
     }
 }
