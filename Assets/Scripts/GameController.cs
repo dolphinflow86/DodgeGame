@@ -16,6 +16,7 @@ public class GameController : MonoBehaviour {
 
     public StageInfo[] stageInfo;
 
+    public bool showCursor;
     private int currentStage;
     private float timeRecord;
     private static GameController instance;
@@ -44,6 +45,15 @@ public class GameController : MonoBehaviour {
     {
         // time setting
         timeRecord += Time.deltaTime;
+        if(showCursor)
+        {
+            Cursor.visible = true;
+        }
+        else
+        {
+            Cursor.visible = false;
+        }
+
     }
 
     public float GetTime()
