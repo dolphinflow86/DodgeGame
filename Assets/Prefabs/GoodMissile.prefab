@@ -20,8 +20,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4549408530258412}
   - component: {fileID: 212743493844700566}
-  - component: {fileID: 114262323646276758}
   - component: {fileID: 58705457985478004}
+  - component: {fileID: 114262323646276758}
+  - component: {fileID: 114726855519021098}
   m_Layer: 0
   m_Name: GoodMissile
   m_TagString: GoodMissile
@@ -68,10 +69,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 126544527bc5d384f818a520848f1933, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  missileSpeed: 0.1
   xRange: {x: -5, y: 5}
   yRange: {x: -5, y: 5}
   damage: 15
+--- !u!114 &114726855519021098
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1516784673223660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc1464459a397e44d84c7a8d4b2e5bf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeTime: 5
 --- !u!212 &212743493844700566
 SpriteRenderer:
   m_ObjectHideFlags: 1

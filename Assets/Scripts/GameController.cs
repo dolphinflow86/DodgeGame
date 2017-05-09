@@ -12,6 +12,7 @@ public class GameController : MonoBehaviour {
         public float enemySpawnRatio;
         public float badMissileSpeed;
         public float goodMissileSpeed;
+        public float stageDurationSecond;
     }
 
     public StageInfo[] stageInfo;
@@ -19,6 +20,7 @@ public class GameController : MonoBehaviour {
     public bool showCursor;
     private int currentStage;
     private float timeRecord;
+    private bool isSpawn;
     private static GameController instance;
 
     public static GameController GetInstance()
@@ -39,6 +41,7 @@ public class GameController : MonoBehaviour {
     {
         timeRecord = 0.0f;
         currentStage = 0;
+        isSpawn = true;
     }
 
     void Update ()
@@ -54,6 +57,11 @@ public class GameController : MonoBehaviour {
             Cursor.visible = false;
         }
 
+        // stage check
+        if(stageInfo[currentStage].stageDurationSecond <= timeRecord)
+        {
+            SetNextStage();
+        }
     }
 
     public float GetTime()
@@ -64,5 +72,24 @@ public class GameController : MonoBehaviour {
     public StageInfo GetCurrentStageInfo()
     {
         return (stageInfo[currentStage]);
+    }
+
+    public void SetNextStage()
+    {
+        // Reset stageInfo
+        timeRecord = 0.0f;
+        ++currentStage;
+
+        // Show Stage Text
+    }
+
+    public void SetSpawn(bool isSpawn)
+    {
+        this.isSpawn = isSpawn;
+    }
+      
+    public bool IsSpawn()
+    {
+        return (isSpawn);
     }
 }

@@ -22,6 +22,14 @@ public class Spawner : MonoBehaviour {
 	
 	void Update ()
     {
+        if(gameController.IsSpawn())
+        {
+            SpawnMissiles();
+        }
+    }
+
+    void SpawnMissiles()
+    {
         if (Time.time > nextSpawn)
         {
             nextSpawn = Time.time + rateOfSpawn;
