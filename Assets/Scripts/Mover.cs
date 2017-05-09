@@ -9,7 +9,7 @@ public class Mover : MonoBehaviour {
 
     void Start()
     {
-        Cursor.visible = false;
+        
         sprite_size = GetComponent<SpriteRenderer>().sprite.rect.size;
         local_size = gameObject.transform.localScale;
     }
