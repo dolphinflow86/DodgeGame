@@ -58,7 +58,7 @@ public class GameController : MonoBehaviour {
         }
 
         // stage check
-        if(stageInfo[currentStage].stageDurationSecond <= timeRecord)
+        if((currentStage < stageInfo.Length) && (stageInfo[currentStage].stageDurationSecond <= timeRecord))
         {
             SetNextStage();
         }

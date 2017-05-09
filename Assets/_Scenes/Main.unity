@@ -153,22 +153,27 @@ MonoBehaviour:
     enemySpawnRatio: 7
     badMissileSpeed: 0.1
     goodMissileSpeed: 0.15
+    stageDurationSecond: 10
   - rateOfSpawn: 1
     enemySpawnRatio: 7
     badMissileSpeed: 0.15
     goodMissileSpeed: 0.2
+    stageDurationSecond: 20
   - rateOfSpawn: 0.5
     enemySpawnRatio: 8
     badMissileSpeed: 0.2
     goodMissileSpeed: 0.2
+    stageDurationSecond: 30
   - rateOfSpawn: 0
     enemySpawnRatio: 0
     badMissileSpeed: 0
     goodMissileSpeed: 0
+    stageDurationSecond: 0
   - rateOfSpawn: 0
     enemySpawnRatio: 0
     badMissileSpeed: 0
     goodMissileSpeed: 0
+    stageDurationSecond: 0
   showCursor: 0
 --- !u!1 &147777422
 GameObject:
