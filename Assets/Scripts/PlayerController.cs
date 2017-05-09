@@ -26,25 +26,26 @@ public class PlayerController : MonoBehaviour {
         playerHP -= value;
     }
 
-    private void OnCollisionEnter2D(Collision2D col)
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        Attacker attacker = col.gameObject.GetComponent<Attacker>();
-        if(null == attacker)
+        Attacker attacker = collision.gameObject.GetComponent<Attacker>();
+        if (null == attacker)
         {
             return;
         }
 
-        if (col.gameObject.tag == "BadMissile")
+        if (collision.gameObject.tag == "BadMissile")
         {
             attacker.AttackPlayer();
         }
-        else if(col.gameObject.tag == "GoodMissile")
+        else if (collision.gameObject.tag == "GoodMissile")
         {
             attacker.FeedPlayer();
         }
 
         Debug.Log(playerHP);
 
-        Destroy(col.gameObject);
+        Destroy(collision.gameObject);
     }
 }

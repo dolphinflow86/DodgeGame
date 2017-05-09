@@ -14,12 +14,14 @@ public class Attacker : MonoBehaviour
     private Vector3 playerPos;
     private Vector3 dirVec;
     private float missileSpeed;
+    private Rigidbody2D rigid;
 
 
     void Start()
     {
         playerController = FindObjectOfType<PlayerController>();
         gameController = GameController.GetInstance();
+        rigid = GetComponent<Rigidbody2D>();
 
         Vector3 randomRange = new Vector3(Random.Range(xRange.x, xRange.y), Random.Range(yRange.x, yRange.y), 1);
         dirVec = playerController.transform.position - transform.position + randomRange;
@@ -32,11 +34,14 @@ public class Attacker : MonoBehaviour
         {
             SetSpeed(gameController.GetCurrentStageInfo().goodMissileSpeed);
         }
+
+        rigid.velocity = dirVec.normalized * missileSpeed;
     }
 
     void Update()
     {
-        transform.position += dirVec.normalized * missileSpeed;
+        //transform.position += dirVec.normalized * missileSpeed;
+        
     }
 
     public void AttackPlayer()
