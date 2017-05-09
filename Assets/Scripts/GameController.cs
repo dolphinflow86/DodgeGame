@@ -10,10 +10,13 @@ public class GameController : MonoBehaviour {
 
     public static GameController GetInstance()
     {
-        instance = GameObject.FindObjectOfType<GameController>();
         if(null == instance)
         {
-            Debug.LogError("Failed to create GameController instance.");
+            instance = GameObject.FindObjectOfType<GameController>();
+            if (null == instance)
+            {
+                Debug.LogError("Failed to create GameController instance.");
+            }
         }
 
         return (instance);
