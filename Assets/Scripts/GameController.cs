@@ -47,7 +47,11 @@ public class GameController : MonoBehaviour {
     void Update ()
     {
         // time setting
-        timeRecord += Time.deltaTime;
+        if(FindObjectOfType<GameScreen>() != null && FindObjectOfType<GameScreen>().enabled)
+        {
+            timeRecord += Time.deltaTime;
+        }
+        
         if(showCursor)
         {
             Cursor.visible = true;
@@ -71,6 +75,11 @@ public class GameController : MonoBehaviour {
 
     public StageInfo GetCurrentStageInfo()
     {
+        if(stageInfo.Length <= currentStage)
+        {
+            Debug.LogError("Check currentStageIndex");
+        }
+
         return (stageInfo[currentStage]);
     }
 
