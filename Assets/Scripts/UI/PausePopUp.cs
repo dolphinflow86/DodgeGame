@@ -1,20 +1,37 @@
 ﻿using System.Collections;
 
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PausePopUp : UIScreen {
 
-    public void OnCancelButton()
+    void OnEnable()
+    {
+        GameController.GetInstance().showCursor = true;
+        Time.timeScale = 0;
+    }
+
+    void OnDisable()
+    {
+        Time.timeScale = 1;
+    }
+    
+
+    public void OnResumeButton()
     {
         ScreenManager.instance.Hide();
     }
 
-    public void OnConfirmButton()
+    public void OnQuitButton()
     {
-        //Hide the exitpopup
+        //Hide the pausepopup
         ScreenManager.instance.Hide();
 
         //Hide the gamescreen
         ScreenManager.instance.Hide();
+
+        SceneManager.UnloadSceneAsync(1);
+
+
     }
 }

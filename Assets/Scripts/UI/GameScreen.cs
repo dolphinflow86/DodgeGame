@@ -6,7 +6,12 @@ public class GameScreen : UIScreen {
 
     private void OnEnable()
     {
-        Cursor.visible = false;
+        GameController.GetInstance().showCursor = false;
+    }
+
+    private void OnDisable()
+    {
+        GameController.GetInstance().showCursor = true;
     }
 
     // Update is called once per frame
