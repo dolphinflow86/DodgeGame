@@ -5,6 +5,8 @@ using System;
 
 public class ScreenManager : MonoBehaviour {
 
+  
+
     public static ScreenManager instance;
 
     private Dictionary<Type, UIScreen> screens;
@@ -21,9 +23,10 @@ public class ScreenManager : MonoBehaviour {
         {
             screens.Add(screen.GetType(), screen);
             screen.gameObject.SetActive(false);
-            Debug.Log(screen.name);
+           
         }
         Show(typeof(MenuScreen));
+
     }
 
     public void Show(Type uiscreenType)
@@ -39,6 +42,7 @@ public class ScreenManager : MonoBehaviour {
 
 
         newScreen.gameObject.SetActive(true);
+
         stack.Push(newScreen);
     }
 

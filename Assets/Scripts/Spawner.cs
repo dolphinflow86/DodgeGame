@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Spawner : MonoBehaviour {
 
@@ -30,6 +31,10 @@ public class Spawner : MonoBehaviour {
             Vector2 rndPosWithin;
             rndPosWithin = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
             rndPosWithin = transform.TransformPoint(rndPosWithin * 0.5f);
+
+            //Set active scene to the "Game" Scene so all the objects can be spawned in the Game Scene
+            SceneManager.SetActiveScene(SceneManager.GetSceneByName("Game"));
+
             Instantiate((enemySpawnRatio < Random.Range(0.0f, 10.0f)) ? goodObject : badObject, rndPosWithin, transform.rotation);
         }
     }
