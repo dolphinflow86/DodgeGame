@@ -4,7 +4,19 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour {
 
-    public float enemySpawnRatio;
+    // State Variables
+    [System.Serializable]
+    public class StageInfo
+    {
+        public float rateOfSpawn;
+        public float enemySpawnRatio;
+        public float badMissileSpeed;
+        public float goodMissileSpeed;
+    }
+
+    public StageInfo[] stageInfo;
+
+    private int currentStage;
     private float timeRecord;
     private static GameController instance;
 
@@ -25,6 +37,7 @@ public class GameController : MonoBehaviour {
 	void Start ()
     {
         timeRecord = 0.0f;
+        currentStage = 0;
     }
 
     void Update ()
@@ -38,8 +51,8 @@ public class GameController : MonoBehaviour {
         return (timeRecord);
     }
 
-    public float GetEnemySpawnRatio()
+    public StageInfo GetCurrentStageInfo()
     {
-        return (enemySpawnRatio);
+        return (stageInfo[currentStage]);
     }
 }

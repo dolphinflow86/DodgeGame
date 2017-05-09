@@ -79,4 +79,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   badObject: {fileID: 1516784673223660, guid: 42f9c89bf020aa94eb80d597bf6bf452, type: 2}
   goodObject: {fileID: 1516784673223660, guid: 2efe1d808ba83784f93a7a6498621742, type: 2}
-  rateOfSpawn: 1

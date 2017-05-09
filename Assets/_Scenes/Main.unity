@@ -42,7 +42,7 @@ RenderSettings:
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 11
+  serializedVersion: 9
   m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
@@ -54,7 +54,7 @@ LightmapSettings:
     m_EnableBakedLightmaps: 0
     m_EnableRealtimeLightmaps: 0
   m_LightmapEditorSettings:
-    serializedVersion: 9
+    serializedVersion: 8
     m_Resolution: 2
     m_BakeResolution: 40
     m_TextureWidth: 1024
@@ -87,7 +87,7 @@ LightmapSettings:
     m_PVRFilteringAtrousNormalSigma: 1
     m_PVRFilteringAtrousPositionSigma: 1
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_ShadowMaskMode: 2
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -191,7 +191,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bb226987ceac81439d7d1c3816fc309, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpawnRatio: 7
+  stageInfo:
+  - rateOfSpawn: 0.5
+    enemySpawnRatio: 7
+    badMissileSpeed: 0.1
+    goodMissileSpeed: 0.15
+  - rateOfSpawn: 1
+    enemySpawnRatio: 7
+    badMissileSpeed: 0.15
+    goodMissileSpeed: 0.2
+  - rateOfSpawn: 0.5
+    enemySpawnRatio: 8
+    badMissileSpeed: 0.2
+    goodMissileSpeed: 0.2
+  - rateOfSpawn: 0
+    enemySpawnRatio: 0
+    badMissileSpeed: 0
+    goodMissileSpeed: 0
+  - rateOfSpawn: 0
+    enemySpawnRatio: 0
+    badMissileSpeed: 0
+    goodMissileSpeed: 0
 --- !u!1 &147777422
 GameObject:
   m_ObjectHideFlags: 0
@@ -878,7 +898,6 @@ GameObject:
   - component: {fileID: 884135011}
   - component: {fileID: 884135016}
   - component: {fileID: 884135014}
-  - component: {fileID: 884135017}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -937,7 +956,6 @@ SpriteRenderer:
   m_Size: {x: 0.37, y: 0.37}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_MaskInteraction: 0
 --- !u!4 &884135013
 Transform:
   m_ObjectHideFlags: 0
@@ -977,7 +995,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.185
+  m_Radius: 0.43
 --- !u!50 &884135016
 Rigidbody2D:
   serializedVersion: 4
@@ -998,47 +1016,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!331 &884135017
-SpriteMask:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 884135010}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_Materials:
-  - {fileID: 10758, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7ae40ecea61feaa4e8f0986318d82af8, type: 3}
-  m_MaskAlphaCutoff: 0.2
-  m_FrontSortingLayerID: 0
-  m_BackSortingLayerID: 0
-  m_FrontSortingLayer: 0
-  m_BackSortingLayer: 0
-  m_FrontSortingOrder: 0
-  m_BackSortingOrder: 0
-  m_IsCustomRangeActive: 0
 --- !u!1 &921280411
 GameObject:
   m_ObjectHideFlags: 0
@@ -1315,7 +1292,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1019451409
 MonoBehaviour:
   m_ObjectHideFlags: 0

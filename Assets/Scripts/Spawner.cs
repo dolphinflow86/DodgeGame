@@ -6,19 +6,22 @@ public class Spawner : MonoBehaviour {
 
     public GameObject badObject;
     public GameObject goodObject;
-    public float rateOfSpawn;
+    
 
     private float enemySpawnRatio;
+    private float rateOfSpawn;
     private float nextSpawn = 0;
+    private GameController gameController;
     
     void Start ()
     {
-        enemySpawnRatio = GameController.GetInstance().GetEnemySpawnRatio();
+        gameController = GameController.GetInstance();
+        rateOfSpawn = gameController.GetCurrentStageInfo().rateOfSpawn;
+        enemySpawnRatio = gameController.GetCurrentStageInfo().enemySpawnRatio;
     }
 	
 	void Update ()
     {
-        
         if (Time.time > nextSpawn)
         {
             nextSpawn = Time.time + rateOfSpawn;
@@ -27,7 +30,7 @@ public class Spawner : MonoBehaviour {
             Vector2 rndPosWithin;
             rndPosWithin = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
             rndPosWithin = transform.TransformPoint(rndPosWithin * 0.5f);
-            Instantiate((enemySpawnRatio < Random.Range(0.0f, 9.0f)) ? goodObject : badObject, rndPosWithin, transform.rotation);
+            Instantiate((enemySpawnRatio < Random.Range(0.0f, 10.0f)) ? goodObject : badObject, rndPosWithin, transform.rotation);
         }
     }
 }
