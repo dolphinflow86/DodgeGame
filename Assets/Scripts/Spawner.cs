@@ -13,7 +13,7 @@ public class Spawner : MonoBehaviour {
     
     void Start ()
     {
-        enemySpawnRatio = FindObjectOfType<GameController>().GetEnemySpawnRatio();
+        enemySpawnRatio = GameController.GetInstance().GetEnemySpawnRatio();
     }
 	
 	void Update ()

@@ -14,7 +14,6 @@ public class PlayerController : MonoBehaviour {
 	void Update ()
     {
         //float HPScale = playerHP / 100.0f;
-        
 	}
 
     public void IncreaseHP(float value)
