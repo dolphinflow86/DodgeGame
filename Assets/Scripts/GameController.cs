@@ -6,6 +6,18 @@ public class GameController : MonoBehaviour {
 
     public float enemySpawnRatio;
     private float timeRecord;
+    private static GameController instance;
+
+    public static GameController GetInstance()
+    {
+        instance = GameObject.FindObjectOfType<GameController>();
+        if(null == instance)
+        {
+            Debug.LogError("Failed to create GameController instance.");
+        }
+
+        return (instance);
+    }
 
 	void Start ()
     {
