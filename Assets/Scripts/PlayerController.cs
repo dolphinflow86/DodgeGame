@@ -44,8 +44,8 @@ public class PlayerController : MonoBehaviour {
             attacker.FeedPlayer();
         }
 
-        Debug.Log(playerHP);
-
+        //Debug.Log(playerHP);
+        
         Destroy(collision.gameObject);
     }
 }

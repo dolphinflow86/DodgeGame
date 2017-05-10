@@ -20,5 +20,9 @@ public class GameScreen : UIScreen {
         {
             ScreenManager.instance.Show(typeof(PausePopUp));
         }
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            ScreenManager.instance.Show(typeof(GameoverPopUp));
+        }
     }
 }

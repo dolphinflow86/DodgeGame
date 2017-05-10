@@ -16,11 +16,15 @@ public class GameController : MonoBehaviour {
     }
 
     public StageInfo[] stageInfo;
-
     public bool showCursor;
+    public int timeScore;
+
     private int currentStage;
     private float timeRecord;
     private bool isSpawn;
+    private int totalScore;
+    private float currentTime;
+    private float prevTime;
     private static GameController instance;
 
     public static GameController GetInstance()
@@ -42,16 +46,16 @@ public class GameController : MonoBehaviour {
         timeRecord = 0.0f;
         currentStage = 0;
         isSpawn = true;
+        totalScore = 0;
+        currentTime = 0.0f;
+        prevTime = 0.0f;
     }
 
     void Update ()
     {
-        // time setting
-        if(FindObjectOfType<GameScreen>() != null && FindObjectOfType<GameScreen>().enabled)
-        {
-            timeRecord += Time.deltaTime;
-        }
-        
+        RecordTIme();
+        RecordScore();
+
         if(showCursor)
         {
             Cursor.visible = true;
@@ -68,10 +72,31 @@ public class GameController : MonoBehaviour {
         }
     }
 
+    private void RecordTIme()
+    {
+        // time setting
+        if (FindObjectOfType<GameScreen>() != null && FindObjectOfType<GameScreen>().enabled)
+        {
+            timeRecord += Time.deltaTime;
+            currentTime = timeRecord;
+        }
+    }
+
+    private void RecordScore()
+    {
+        if(1.0f < (currentTime - prevTime))
+        {
+            totalScore += timeScore;
+            prevTime = currentTime;
+            Debug.Log("TotalScore : " + totalScore);
+        }
+    }
+
     public float GetTime()
     {
         return (timeRecord);
     }
+
 
     public StageInfo GetCurrentStageInfo()
     {
@@ -87,9 +112,9 @@ public class GameController : MonoBehaviour {
     {
         // Reset stageInfo
         timeRecord = 0.0f;
+        currentTime = currentTime - prevTime;
+        prevTime = 0.0f;
         ++currentStage;
-
-        // Show Stage Text
     }
 
     public void SetSpawn(bool isSpawn)
@@ -100,5 +125,10 @@ public class GameController : MonoBehaviour {
     public bool IsSpawn()
     {
         return (isSpawn);
+    }
+
+    public void AddScore(int score)
+    {
+        totalScore += score;
     }
 }

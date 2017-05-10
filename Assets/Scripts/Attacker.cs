@@ -8,6 +8,7 @@ public class Attacker : MonoBehaviour
     public Vector2 xRange;
     public Vector2 yRange;
     public float damage;
+    public int score;
 
     private PlayerController playerController;
     private GameController gameController;
@@ -40,18 +41,19 @@ public class Attacker : MonoBehaviour
 
     void Update()
     {
-        //transform.position += dirVec.normalized * missileSpeed;
-        
+        //transform.position += dirVec.normalized * missileSpeed * 0.01f;  
     }
 
     public void AttackPlayer()
     {
         playerController.DecreaseHP(damage);
+        gameController.AddScore(score);
     }
 
     public void FeedPlayer()
     {
         playerController.IncreaseHP(damage);
+        gameController.AddScore(score);
     }
 
     public void SetSpeed(float speed)

@@ -93,7 +93,7 @@ MonoBehaviour:
   xRange: {x: -5, y: 5}
   yRange: {x: -5, y: 5}
   damage: 10
-  score: -50
+  score: 0
 --- !u!114 &114569178678635954
 MonoBehaviour:
   m_ObjectHideFlags: 1
