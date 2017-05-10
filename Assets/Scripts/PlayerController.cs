@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour {
         }
 
         Debug.Log(playerHP);
-
+        
         Destroy(collision.gameObject);
     }
 }

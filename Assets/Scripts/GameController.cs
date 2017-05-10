@@ -21,6 +21,7 @@ public class GameController : MonoBehaviour {
     private int currentStage;
     private float timeRecord;
     private bool isSpawn;
+    private int totalScore;
     private static GameController instance;
 
     public static GameController GetInstance()
@@ -42,6 +43,7 @@ public class GameController : MonoBehaviour {
         timeRecord = 0.0f;
         currentStage = 0;
         isSpawn = true;
+        totalScore = 0;
     }
 
     void Update ()
@@ -100,5 +102,10 @@ public class GameController : MonoBehaviour {
     public bool IsSpawn()
     {
         return (isSpawn);
+    }
+
+    public void AddScore(int score)
+    {
+        totalScore += score;
     }
 }
