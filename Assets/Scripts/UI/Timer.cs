@@ -6,17 +6,17 @@ using UnityEngine.UI;
 public class Timer : MonoBehaviour {
 
     Text text;
-    GameController gc;
+    
 
 	void Start () {
         text = GetComponent<Text>();
-        gc = FindObjectOfType<GameController>();
+       
 
     }
 	
 	
 	void Update () {
-        text.text = gc.GetTime().ToString("f1");
+        text.text = GameController.GetInstance().GetTime().ToString("f1");
 
 	}
 }
