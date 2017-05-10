@@ -5,6 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class MenuScreen : UIScreen {
 
+    private void OnEnable()
+    {
+        GameController.GetInstance().showCursor = true;
+    }
+
     public void OnStartGameButton()
     {
         ScreenManager.instance.Show(typeof(GameScreen));

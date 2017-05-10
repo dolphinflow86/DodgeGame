@@ -9,10 +9,6 @@ public class GameScreen : UIScreen {
         GameController.GetInstance().showCursor = false;
     }
 
-    private void OnDisable()
-    {
-        GameController.GetInstance().showCursor = true;
-    }
 
     // Update is called once per frame
     void Update () {
@@ -24,5 +20,10 @@ public class GameScreen : UIScreen {
         {
             ScreenManager.instance.Show(typeof(GameoverPopUp));
         }
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            ScreenManager.instance.Show(typeof(HighscorePopup));
+        }
+
     }
 }
