@@ -8,6 +8,7 @@ public class MenuScreen : UIScreen {
     private void OnEnable()
     {
         GameController.GetInstance().showCursor = true;
+        GameController.GetInstance().LoadHighScore();
     }
 
     public void OnStartGameButton()

@@ -19,7 +19,7 @@ public class HighscorePopup : UIScreen {
     public void GetInput(string nameInput)
     {
         Debug.Log(nameInput);
+        GameController.GetInstance().SaveHighScore(nameInput);
         ScreenManager.instance.Show(typeof(GameoverPopUp));
     }
-
 }
