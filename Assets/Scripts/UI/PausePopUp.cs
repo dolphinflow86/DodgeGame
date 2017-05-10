@@ -15,7 +15,14 @@ public class PausePopUp : UIScreen {
     {
         Time.timeScale = 1;
     }
-    
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            ScreenManager.instance.Hide();
+        }
+    }
 
     public void OnResumeButton()
     {

@@ -26,4 +26,9 @@ public class GameScreen : UIScreen {
         }
 
     }
+
+    public void OnPauseButton()
+    {
+        ScreenManager.instance.Show(typeof(PausePopUp));
+    }
 }
