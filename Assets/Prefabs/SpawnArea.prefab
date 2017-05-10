@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4102988500699118}
   - component: {fileID: 61932603493125514}
   - component: {fileID: 114341473268580046}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SpawnArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
