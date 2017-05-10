@@ -5,22 +5,33 @@ using UnityEngine.SceneManagement;
 
 public class GameoverPopUp : UIScreen {
 
+    void OnEnable()
+    {
+        GameController.GetInstance().showCursor = true;
+        Time.timeScale = 0;
+    }
+
+    void OnDisable()
+    {
+        Time.timeScale = 1;
+    }
+
     public void OnYesButton()
     {
         ScreenManager.instance.Hide();
         SceneManager.UnloadSceneAsync(1);
         SceneManager.LoadScene("Game", LoadSceneMode.Additive);
-
     }
 
-    public void OnConfirmButton()
+    public void OnNoButton()
     {
         //Hide the gameoverPopup
         ScreenManager.instance.Hide();
-        //Hide the pausepopup
-        ScreenManager.instance.Hide();
-
+        
         //Hide the gamescreen
         ScreenManager.instance.Hide();
+
+        SceneManager.UnloadSceneAsync(1);
+        
     }
 }
