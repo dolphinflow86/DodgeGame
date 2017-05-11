@@ -92,7 +92,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xRange: {x: -5, y: 5}
   yRange: {x: -5, y: 5}
-  damage: 10
+  damage: 1
   score: 0
 --- !u!114 &114569178678635954
 MonoBehaviour:
