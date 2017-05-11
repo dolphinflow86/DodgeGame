@@ -58,12 +58,7 @@ public class GameController : MonoBehaviour {
 
 	void Start ()
     {
-        timeRecord = 0.0f;
-        currentStage = 0;
-        isSpawn = true;
-        totalScore = 0;
-        currentTime = 0.0f;
-        prevTime = 0.0f;
+        ResetStage();
     }
 
     void Update ()
@@ -85,6 +80,16 @@ public class GameController : MonoBehaviour {
         {
             SetNextStage();
         }
+    }
+    
+    public void ResetStage()
+    {
+        timeRecord = 0.0f;
+        currentStage = 0;
+        isSpawn = true;
+        totalScore = 0;
+        currentTime = 0.0f;
+        prevTime = 0.0f;
     }
 
     private void RecordTIme()
