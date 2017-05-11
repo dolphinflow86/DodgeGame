@@ -25,10 +25,11 @@ public class GameScreen : UIScreen {
             ScreenManager.instance.Show(typeof(HighscorePopup));
         }
 
-    }
+        if(FindObjectOfType<PlayerController>() != null && FindObjectOfType<PlayerController>().playerHP <= 0)
+        {
+            ScreenManager.instance.Show(typeof(GameoverPopUp));
+        }
 
-    public void OnPauseButton()
-    {
-        ScreenManager.instance.Show(typeof(PausePopUp));
     }
+    
 }
