@@ -11,14 +11,7 @@ public class MenuScreen : UIScreen {
         GameController.GetInstance().LoadHighScore();
     }
 
-    private void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            AudioManager.instance.PlaySound("highscore");
-            AudioManager.instance.PlaySound("good");
-        }
-    }
+
 
     public void OnStartGameButton()
     {

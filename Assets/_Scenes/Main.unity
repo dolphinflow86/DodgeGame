@@ -1024,6 +1024,48 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundOnSprite: {fileID: 21300000, guid: 847444dd776f0dc46a4ad63dd16f4ef7, type: 3}
   soundOffSprite: {fileID: 21300000, guid: 50cd729fba406034cb97bde22f0a44c5, type: 3}
+--- !u!1001 &436590982
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4021392301348642, guid: de056ad6260a3334ea5f613870a14f5c, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4021392301348642, guid: de056ad6260a3334ea5f613870a14f5c, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4021392301348642, guid: de056ad6260a3334ea5f613870a14f5c, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4021392301348642, guid: de056ad6260a3334ea5f613870a14f5c, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4021392301348642, guid: de056ad6260a3334ea5f613870a14f5c, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4021392301348642, guid: de056ad6260a3334ea5f613870a14f5c, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4021392301348642, guid: de056ad6260a3334ea5f613870a14f5c, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4021392301348642, guid: de056ad6260a3334ea5f613870a14f5c, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: de056ad6260a3334ea5f613870a14f5c, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &437764889
 GameObject:
   m_ObjectHideFlags: 0

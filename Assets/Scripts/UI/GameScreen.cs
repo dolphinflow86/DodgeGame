@@ -23,7 +23,7 @@ public class GameScreen : UIScreen {
         }
         if (Input.GetKeyDown(KeyCode.H))
         {
-            
+            AudioManager.instance.PlaySound("highscore");
             ScreenManager.instance.Show(typeof(HighscorePopup));
             
         }

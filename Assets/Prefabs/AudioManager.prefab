@@ -51,4 +51,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd3511c3b09441d458fff3a54777f704, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sounds: []
+  sounds:
+  - name: highscore
+    clip: {fileID: 8300000, guid: 8378b8d8d89a8cb44b3f227d19898035, type: 3}
+    volume: 1
+  - name: bad
+    clip: {fileID: 8300000, guid: 111d71cb5ce70634693699791f072788, type: 3}
+    volume: 1
+  - name: good
+    clip: {fileID: 8300000, guid: 83adce2f20c5ce646a4791d7a4745dde, type: 3}
+    volume: 1
+  - name: gameover
+    clip: {fileID: 8300000, guid: 1357ef7c374bba14f9cce25eaf8c92b9, type: 3}
+    volume: 1
