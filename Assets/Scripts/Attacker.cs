@@ -7,10 +7,11 @@ public class Attacker : MonoBehaviour
 
     public Vector2 xRange;
     public Vector2 yRange;
-    public float damage;
+    public int damage;
     public int score;
 
     private PlayerController playerController;
+    private HPManager hpManager;
     private GameController gameController;
     private Vector3 playerPos;
     private Vector3 dirVec;
@@ -21,6 +22,7 @@ public class Attacker : MonoBehaviour
     void Start()
     {
         playerController = FindObjectOfType<PlayerController>();
+        hpManager = FindObjectOfType<HPManager>();
         gameController = GameController.GetInstance();
         rigid = GetComponent<Rigidbody2D>();
 
@@ -46,13 +48,13 @@ public class Attacker : MonoBehaviour
 
     public void AttackPlayer()
     {
-        playerController.DecreaseHP(damage);
+        hpManager.DecreaseHP(damage);
         gameController.AddScore(score);
     }
 
     public void FeedPlayer()
     {
-        playerController.IncreaseHP(damage);
+        hpManager.IncreaseHP(damage);
         gameController.AddScore(score);
     }
 

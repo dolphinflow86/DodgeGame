@@ -41,6 +41,7 @@ public class GameController : MonoBehaviour {
     private float currentTime;
     private float prevTime;
     private static GameController instance;
+    private PlayerController playerController;
 
     public static GameController GetInstance()
     {
@@ -58,6 +59,7 @@ public class GameController : MonoBehaviour {
 
 	void Start ()
     {
+        playerController = GameObject.FindObjectOfType<PlayerController>();
         ResetStage();
     }
 

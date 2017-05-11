@@ -26,7 +26,7 @@ public class GameScreen : UIScreen {
             ScreenManager.instance.Show(typeof(HighscorePopup));
         }
 
-        if(FindObjectOfType<PlayerController>() != null && FindObjectOfType<PlayerController>().playerHP <= 0)
+        if(FindObjectOfType<PlayerController>() != null && FindObjectOfType<HPManager>().playerHPLevel <= 0)
         {
             ScreenManager.instance.Show(typeof(GameoverPopUp));
         }

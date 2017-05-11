@@ -4,28 +4,15 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
-    public float playerHP;
-
-	void Start ()
+    void Start ()
     {
 
     }
 	
 	void Update ()
     {
-        //float HPScale = playerHP / 100.0f;
+
 	}
-
-    public void IncreaseHP(float value)
-    {
-        playerHP += value;
-    }
-
-    public void DecreaseHP(float value)
-    {
-        playerHP -= value;
-    }
-
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -44,8 +31,6 @@ public class PlayerController : MonoBehaviour {
             attacker.FeedPlayer();
         }
 
-        //Debug.Log(playerHP);
-        
         Destroy(collision.gameObject);
     }
 }
