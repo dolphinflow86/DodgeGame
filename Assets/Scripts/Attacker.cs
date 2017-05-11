@@ -29,26 +29,19 @@ public class Attacker : MonoBehaviour
         Vector3 randomRange = new Vector3(Random.Range(xRange.x, xRange.y), Random.Range(yRange.x, yRange.y), 1);
         dirVec = playerController.transform.position - transform.position + randomRange;
 
-        if ("BadMissile" == tag)
-        {
-            SetSpeed(gameController.GetCurrentStageInfo().badMissileSpeed);
-        }
-        else if ("GoodMissile" == tag)
-        {
-            SetSpeed(gameController.GetCurrentStageInfo().goodMissileSpeed);
-        }
+        SetSpeed();
 
         rigid.velocity = dirVec.normalized * missileSpeed;
     }
 
     void Update()
     {
-        //transform.position += dirVec.normalized * missileSpeed * 0.01f;  
+        SetSpeed();
     }
 
     public void AttackPlayer()
     {
-        hpManager.DecreaseHP(damage);
+       // hpManager.DecreaseHP(damage);
         gameController.AddScore(score);
     }
 
@@ -58,8 +51,15 @@ public class Attacker : MonoBehaviour
         gameController.AddScore(score);
     }
 
-    public void SetSpeed(float speed)
+    public void SetSpeed()
     {
-        missileSpeed = speed;
+        if ("BadMissile" == tag)
+        {
+            missileSpeed = gameController.GetCurrentStageInfo().badMissileSpeed;
+        }
+        else if ("GoodMissile" == tag)
+        {
+            missileSpeed = gameController.GetCurrentStageInfo().goodMissileSpeed;
+        }
     }
 }

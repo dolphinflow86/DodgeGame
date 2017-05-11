@@ -452,7 +452,7 @@ MonoBehaviour:
   goodEmotion: {fileID: 21300000, guid: 37738c02d26865b4691461146d858215, type: 3}
   badEmotion: {fileID: 21300000, guid: 2b453e6921d13924a8561a7b0a1fd7e9, type: 3}
   normalEmotion: {fileID: 21300000, guid: 9f8991bcf349c254b94a242497c459c4, type: 3}
-  addedTime: 3
+  addedTime: 0.5
 --- !u!212 &622000290
 SpriteRenderer:
   m_ObjectHideFlags: 0

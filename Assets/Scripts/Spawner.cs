@@ -25,6 +25,8 @@ public class Spawner : MonoBehaviour {
     {
         if(gameController.IsSpawn())
         {
+            rateOfSpawn = gameController.GetCurrentStageInfo().rateOfSpawn;
+            enemySpawnRatio = gameController.GetCurrentStageInfo().enemySpawnRatio;
             SpawnMissiles();
         }
     }
