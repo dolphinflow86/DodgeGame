@@ -41,7 +41,6 @@ public class GameController : MonoBehaviour {
     private float currentTime;
     private float prevTime;
     private static GameController instance;
-    private PlayerController playerController;
 
     public static GameController GetInstance()
     {
@@ -59,7 +58,6 @@ public class GameController : MonoBehaviour {
 
 	void Start ()
     {
-        playerController = GameObject.FindObjectOfType<PlayerController>();
         ResetStage();
     }
 
@@ -110,7 +108,7 @@ public class GameController : MonoBehaviour {
         {
             totalScore += timeScore;
             prevTime = currentTime;
-            Debug.Log("TotalScore : " + totalScore);
+            //Debug.Log("TotalScore : " + totalScore);
         }
     }
 

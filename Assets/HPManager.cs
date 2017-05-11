@@ -45,7 +45,6 @@ public class HPManager : MonoBehaviour {
 
     private void UpdateHPLevel()
     {
-        Debug.Log("playerHPLevel : " + playerHPLevel);
-        GetComponent<SpriteRenderer>().sprite = sprites[playerHPLevel];
+        hpImage.sprite = sprites[playerHPLevel];
     }
 }
