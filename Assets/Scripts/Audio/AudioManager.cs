@@ -22,7 +22,7 @@ public class Sound
     public void Play()
     {
         source.volume = volume;
-        source.PlayOneShot(clip);
+        source.Play();
     }
 }
 
@@ -47,6 +47,7 @@ public class AudioManager : MonoBehaviour
             soundObject.transform.parent = (this.transform);
             sounds[i].SetSource(soundObject.AddComponent<AudioSource>());
         }
+        
 
     }
 
@@ -57,9 +58,14 @@ public class AudioManager : MonoBehaviour
             if (sounds[i].name == name)
             {
                 sounds[i].Play();
+                Debug.Log("sound played");
                 return;
             }
+
         }
+         
+            Debug.Log("Nothing to play00");
+        
     }
 
 }
