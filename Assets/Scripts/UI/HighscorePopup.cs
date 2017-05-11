@@ -20,6 +20,16 @@ public class HighscorePopup : UIScreen {
     {
         Debug.Log(nameInput);
         GameController.GetInstance().SaveHighScore(nameInput);
+        ScreenManager.instance.Hide();
+        ScreenManager.instance.Show(typeof(GameoverPopUp));
+    }
+
+    public void ConfirmButton()
+    {
+        InputField input = GetComponent<InputField>();
+        GameController.GetInstance().SaveHighScore(input.text);
+        Debug.Log(input.text);
+        ScreenManager.instance.Hide();
         ScreenManager.instance.Show(typeof(GameoverPopUp));
     }
 }
