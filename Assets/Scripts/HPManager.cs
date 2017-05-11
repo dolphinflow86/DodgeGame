@@ -47,6 +47,7 @@ public class HPManager : MonoBehaviour {
 
         UpdateHPLevel();
         transform.parent.GetComponent<SpriteRenderer>().sprite = goodEmotion;
+        AudioManager.instance.PlaySound("good");
 
         isHit = true;
         timeToNormal += addedTime;
@@ -61,6 +62,7 @@ public class HPManager : MonoBehaviour {
 
         UpdateHPLevel();
         transform.parent.GetComponent<SpriteRenderer>().sprite = badEmotion;
+        AudioManager.instance.PlaySound("bad");
 
         isHit = true;
         timeToNormal += addedTime;
