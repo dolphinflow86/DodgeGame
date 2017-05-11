@@ -14,19 +14,7 @@ public class SoundOnOff : MonoBehaviour {
         img = GetComponent<Image>();
     }
 
-    private void OnEnable()
-    {
-        if (soundOn)
-        {
-            img.sprite = soundOnSprite;
-            AudioListener.pause = false;
-        }
-        else
-        {
-            img.sprite = soundOffSprite;
-            AudioListener.pause = true;
-        }
-    }
+ 
 
     public void SoundToggle()
     {
