@@ -23,7 +23,9 @@ public class GameScreen : UIScreen {
         }
         if (Input.GetKeyDown(KeyCode.H))
         {
+            
             ScreenManager.instance.Show(typeof(HighscorePopup));
+            
         }
 
         if(FindObjectOfType<PlayerController>() != null && FindObjectOfType<HPManager>().playerHPLevel <= 0)
