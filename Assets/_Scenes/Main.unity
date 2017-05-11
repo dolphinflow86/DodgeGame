@@ -149,11 +149,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stageInfo:
-  - rateOfSpawn: 0.5
-    enemySpawnRatio: 7
-    badMissileSpeed: 5
-    goodMissileSpeed: 5
-    stageDurationSecond: 100
+  - rateOfSpawn: 3
+    enemySpawnRatio: 9
+    badMissileSpeed: 2
+    goodMissileSpeed: 2
+    stageDurationSecond: 10
   - rateOfSpawn: 1
     enemySpawnRatio: 7
     badMissileSpeed: 2
@@ -164,16 +164,16 @@ MonoBehaviour:
     badMissileSpeed: 3
     goodMissileSpeed: 3
     stageDurationSecond: 30
-  - rateOfSpawn: 0
-    enemySpawnRatio: 0
-    badMissileSpeed: 0
-    goodMissileSpeed: 0
-    stageDurationSecond: 0
-  - rateOfSpawn: 0
-    enemySpawnRatio: 0
-    badMissileSpeed: 0
-    goodMissileSpeed: 0
-    stageDurationSecond: 0
+  - rateOfSpawn: 1
+    enemySpawnRatio: 1
+    badMissileSpeed: 1
+    goodMissileSpeed: 1
+    stageDurationSecond: 1
+  - rateOfSpawn: 1
+    enemySpawnRatio: 1
+    badMissileSpeed: 1
+    goodMissileSpeed: 1
+    stageDurationSecond: 1000000
   showCursor: 0
   timeScore: 10
   highScoreTextUI:
