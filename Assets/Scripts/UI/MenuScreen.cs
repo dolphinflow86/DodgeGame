@@ -13,6 +13,7 @@ public class MenuScreen : UIScreen {
 
     public void OnStartGameButton()
     {
+        GameController.GetInstance().ResetStage();
         ScreenManager.instance.Show(typeof(GameScreen));
         SceneManager.LoadScene("Game", LoadSceneMode.Additive);
     }

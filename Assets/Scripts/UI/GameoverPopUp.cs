@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class GameoverPopUp : UIScreen {
 
+    
+
     void OnEnable()
     {
         GameController.GetInstance().showCursor = true;
@@ -18,6 +20,7 @@ public class GameoverPopUp : UIScreen {
 
     public void OnYesButton()
     {
+        GameController.GetInstance().ResetStage();
         ScreenManager.instance.Hide();
         SceneManager.UnloadSceneAsync(1);
         SceneManager.LoadScene("Game", LoadSceneMode.Additive);

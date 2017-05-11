@@ -16,7 +16,8 @@ public class Mover : MonoBehaviour {
 
     void Update ()
     {
-        
+        if (Time.timeScale == 0)
+            return;
         Vector2 mousePos = Input.mousePosition;
         //Debug.Log("mousePos : " + mousePos);
         //Debug.Log("Bounds : " + sprite_size.x);
