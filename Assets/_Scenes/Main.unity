@@ -149,26 +149,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stageInfo:
-  - rateOfSpawn: 3
-    enemySpawnRatio: 9
+  - rateOfSpawn: 2.5
+    enemySpawnRatio: 9.9
     badMissileSpeed: 2
     goodMissileSpeed: 2
     stageDurationSecond: 10
-  - rateOfSpawn: 1
-    enemySpawnRatio: 7
-    badMissileSpeed: 2
-    goodMissileSpeed: 2
-    stageDurationSecond: 20
+  - rateOfSpawn: 2
+    enemySpawnRatio: 9.9
+    badMissileSpeed: 2.2
+    goodMissileSpeed: 2.2
+    stageDurationSecond: 13
+  - rateOfSpawn: 1.5
+    enemySpawnRatio: 9.9
+    badMissileSpeed: 2.5
+    goodMissileSpeed: 2.5
+    stageDurationSecond: 13
+  - rateOfSpawn: 1.2
+    enemySpawnRatio: 9.9
+    badMissileSpeed: 2.7
+    goodMissileSpeed: 2.7
+    stageDurationSecond: 15
   - rateOfSpawn: 0.5
-    enemySpawnRatio: 8
+    enemySpawnRatio: 0
     badMissileSpeed: 3
     goodMissileSpeed: 3
-    stageDurationSecond: 30
-  - rateOfSpawn: 1
-    enemySpawnRatio: 1
-    badMissileSpeed: 1
-    goodMissileSpeed: 1
-    stageDurationSecond: 1
+    stageDurationSecond: 1.1
+  - rateOfSpawn: 0.8
+    enemySpawnRatio: 9.9
+    badMissileSpeed: 3
+    goodMissileSpeed: 3
+    stageDurationSecond: 20
   - rateOfSpawn: 1
     enemySpawnRatio: 1
     badMissileSpeed: 1
@@ -890,8 +900,9 @@ GameObject:
   - component: {fileID: 384277743}
   - component: {fileID: 384277742}
   - component: {fileID: 384277741}
+  - component: {fileID: 384277744}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Sound_Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -953,7 +964,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 384277742}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 384277744}
+        m_MethodName: SoundToggle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &384277742
@@ -989,6 +1011,19 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 384277739}
+--- !u!114 &384277744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 384277739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99dc558e8114f074784d711a0a554c73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundOnSprite: {fileID: 21300000, guid: 847444dd776f0dc46a4ad63dd16f4ef7, type: 3}
+  soundOffSprite: {fileID: 21300000, guid: 50cd729fba406034cb97bde22f0a44c5, type: 3}
 --- !u!1 &437764889
 GameObject:
   m_ObjectHideFlags: 0
