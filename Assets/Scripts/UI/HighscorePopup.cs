@@ -7,6 +7,7 @@ public class HighscorePopup : UIScreen {
 
     void OnEnable()
     {
+        
         GameController.GetInstance().showCursor = true;
         Time.timeScale = 0;
     }
