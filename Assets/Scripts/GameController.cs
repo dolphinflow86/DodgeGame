@@ -117,6 +117,10 @@ public class GameController : MonoBehaviour {
         return (timeRecord);
     }
 
+    public int GetScore()
+    {
+        return (totalScore);
+    }
 
     public StageInfo GetCurrentStageInfo()
     {
@@ -152,6 +156,23 @@ public class GameController : MonoBehaviour {
         totalScore += score;
     }
 
+    public bool IsRanked()
+    {
+        if(scoreInfoList.Count <= 0)
+        {
+            return (true);
+        }
+
+        ScoreInfo lastInfo = scoreInfoList[scoreInfoList.Count-1];
+
+        if(lastInfo.score < totalScore)
+        {
+            return (true);
+        }
+
+        return (false);
+    }
+
     public void SaveHighScore(string playerName)
     {
         scoreInfoList.Add(new ScoreInfo(playerName, totalScore));
@@ -175,9 +196,11 @@ public class GameController : MonoBehaviour {
         }
 
         string scoreString = PlayerPrefs.GetString("HighScore");
+        print("scoreString : " + scoreString);
 
         // parse high score string
         string[] scoreList = scoreString.Split('|');
+        print("scoreList : " + scoreList);
         foreach (string str in scoreList)
         {
             if(2 != str.Length)
@@ -189,9 +212,13 @@ public class GameController : MonoBehaviour {
             scoreInfoList.Add(new ScoreInfo(detailInfo[0], int.Parse(detailInfo[1])));
         }
 
-        for(int ii = 0; ii < scoreInfoList.Count; ++ii)
+        print("scoreInfoList.Count : " + scoreInfoList.Count);
+        
+        for (int ii = 0; ii < scoreInfoList.Count; ++ii)
         {
             highScoreTextUI[ii].text = (ii + 1).ToString() + "." + scoreInfoList[ii].name + " " + scoreInfoList[ii].score.ToString();
         }
+
+        print("Loaded!!!!");
     }
 }

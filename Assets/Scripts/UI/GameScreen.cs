@@ -6,13 +6,11 @@ public class GameScreen : UIScreen {
 
     private void OnEnable()
     {
-        
         GameController.GetInstance().showCursor = false;
     }
 
-
-    // Update is called once per frame
-    void Update () {
+    void Update ()
+    {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             ScreenManager.instance.Show(typeof(PausePopUp));
@@ -28,11 +26,17 @@ public class GameScreen : UIScreen {
             
         }
 
-        if(FindObjectOfType<PlayerController>() != null && FindObjectOfType<HPManager>().playerHPLevel <= 0)
+        if( (FindObjectOfType<PlayerController>() != null) && (FindObjectOfType<HPManager>().playerHPLevel <= 0))
         {
-            ScreenManager.instance.Show(typeof(GameoverPopUp));
-        }
+            if(GameController.GetInstance().IsRanked())
+            {
+                ScreenManager.instance.Show(typeof(HighscorePopup));
+            }
+            else
+            {
+                ScreenManager.instance.Show(typeof(GameoverPopUp));
+            }
 
+        }
     }
-    
 }

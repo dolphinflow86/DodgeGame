@@ -7,16 +7,13 @@ public class Timer : MonoBehaviour {
 
     Text text;
     
-
-	void Start () {
+	void Start ()
+    {
         text = GetComponent<Text>();
-       
-
     }
 	
-	
-	void Update () {
-        text.text = GameController.GetInstance().GetTime().ToString("f1");
-
+	void Update ()
+    {
+        text.text = GameController.GetInstance().GetScore().ToString();
 	}
 }
