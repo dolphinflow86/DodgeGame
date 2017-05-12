@@ -158,7 +158,7 @@ public class GameController : MonoBehaviour {
 
     public bool IsRanked()
     {
-        if(scoreInfoList.Count <= 0)
+        if(scoreInfoList.Count < 10)
         {
             return (true);
         }
@@ -177,6 +177,7 @@ public class GameController : MonoBehaviour {
     {
         scoreInfoList.Add(new ScoreInfo(playerName, totalScore));
         scoreInfoList.Sort((s1, s2) => s1.score.CompareTo(s2.score));
+        scoreInfoList.Reverse();
 
         // convert a ScoreInfo to the one string
         string scoreString = "";
@@ -194,6 +195,7 @@ public class GameController : MonoBehaviour {
         {
             scoreInfoList = new List<ScoreInfo>();
         }
+        scoreInfoList.Clear();
 
         string scoreString = PlayerPrefs.GetString("HighScore");
 
