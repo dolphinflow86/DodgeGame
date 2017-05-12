@@ -215,7 +215,5 @@ public class GameController : MonoBehaviour {
         {
             highScoreTextUI[ii].text = (ii + 1).ToString() + "." + scoreInfoList[ii].name + " " + scoreInfoList[ii].score.ToString();
         }
-
-        print("Loaded!!!!");
     }
 }
