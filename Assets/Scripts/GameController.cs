@@ -196,23 +196,20 @@ public class GameController : MonoBehaviour {
         }
 
         string scoreString = PlayerPrefs.GetString("HighScore");
-        print("scoreString : " + scoreString);
 
         // parse high score string
         string[] scoreList = scoreString.Split('|');
-        print("scoreList : " + scoreList);
         foreach (string str in scoreList)
         {
-            if(2 != str.Length)
+            string[] detailInfo = str.Split(',');
+
+            if (2 != detailInfo.Length)
             {
                 break;
             }
 
-            string[] detailInfo = str.Split(',');
             scoreInfoList.Add(new ScoreInfo(detailInfo[0], int.Parse(detailInfo[1])));
         }
-
-        print("scoreInfoList.Count : " + scoreInfoList.Count);
         
         for (int ii = 0; ii < scoreInfoList.Count; ++ii)
         {
