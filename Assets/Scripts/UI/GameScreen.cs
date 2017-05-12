@@ -7,6 +7,7 @@ public class GameScreen : UIScreen {
     private void OnEnable()
     {
         GameController.GetInstance().showCursor = false;
+        AudioManager.instance.PlaySound("music");
     }
 
     void Update ()

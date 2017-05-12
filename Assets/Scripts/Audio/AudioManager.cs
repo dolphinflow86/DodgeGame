@@ -22,6 +22,8 @@ public class Sound
 
     public void Play()
     {
+        if (source == null)
+            return;
         source.volume = volume;
         source.loop = loop;
         source.Play();
@@ -29,7 +31,8 @@ public class Sound
 
     public void Stop()
     {
-        if(source != null)
+        if (source == null)
+            return;
         source.Stop();
     }
 }
