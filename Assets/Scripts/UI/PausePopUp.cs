@@ -38,8 +38,5 @@ public class PausePopUp : UIScreen {
         ScreenManager.instance.Hide();
 
         SceneManager.UnloadSceneAsync(1);
-       
-
-
     }
 }
