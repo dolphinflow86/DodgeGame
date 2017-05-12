@@ -31,13 +31,14 @@ public class GameController : MonoBehaviour {
     List<ScoreInfo> scoreInfoList;
     public bool showCursor;
     public int timeScore;
+    public int bonusScore;
     public Text[] highScoreTextUI;
     public GameObject highObj;
 
     private int currentStage;
     private float timeRecord;
     private bool isSpawn;
-    private int totalScore;
+    private int totalScore;    
     private float currentTime;
     private float prevTime;
     private static GameController instance;

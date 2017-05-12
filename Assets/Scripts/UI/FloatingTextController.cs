@@ -7,7 +7,7 @@ public class FloatingTextController : MonoBehaviour {
     FloatingText popupText;
     GameObject canvas;
 
-    FloatingTextController instance;
+    public static FloatingTextController instance;
 
     private void Awake()
     {
@@ -19,8 +19,9 @@ public class FloatingTextController : MonoBehaviour {
     public void CreateFloatingText(string text, Transform location)
     {
         FloatingText fText = Instantiate(popupText);
-        Vector2 screenPosition = Camera.main.WorldToScreenPoint(location.position);
+        Vector2 screenPosition = Camera.main.WorldToScreenPoint(location.position);        
         fText.transform.SetParent(canvas.transform, false);
+        fText.transform.position = screenPosition;
         fText.SetText(text);
     }
 

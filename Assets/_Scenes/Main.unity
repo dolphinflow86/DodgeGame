@@ -117,6 +117,7 @@ GameObject:
   m_Component:
   - component: {fileID: 55291505}
   - component: {fileID: 55291506}
+  - component: {fileID: 55291507}
   m_Layer: 0
   m_Name: GameController
   m_TagString: GameController
@@ -201,6 +202,7 @@ MonoBehaviour:
     stageDurationSecond: 1e+14
   showCursor: 0
   timeScore: 10
+  bonusScore: 50
   highScoreTextUI:
   - {fileID: 1174810035}
   - {fileID: 810922875}
@@ -213,6 +215,17 @@ MonoBehaviour:
   - {fileID: 534765643}
   - {fileID: 357543818}
   highObj: {fileID: 1174810033}
+--- !u!114 &55291507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 55291504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5586ad3a7317c24799cda78eb2c0732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &61197541
 GameObject:
   m_ObjectHideFlags: 0

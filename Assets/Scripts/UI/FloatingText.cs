@@ -8,7 +8,7 @@ public class FloatingText : MonoBehaviour {
     Animator animator;
     Text damageText;
 
-	void Start ()
+	void Awake ()
     {
         animator = GetComponentInChildren<Animator>();
         AnimatorClipInfo[] clipInfo = animator.GetCurrentAnimatorClipInfo(0);
@@ -17,8 +17,8 @@ public class FloatingText : MonoBehaviour {
 	}
 	
     public void SetText(string text)
-    {
-        damageText.text = text;
+    {        
+        animator.GetComponent<Text>().text = text;
     }
 
 }

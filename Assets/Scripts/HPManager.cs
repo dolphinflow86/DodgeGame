@@ -38,11 +38,16 @@ public class HPManager : MonoBehaviour {
         }
 	}
 
-    public void IncreaseHP(int value)
+    public void IncreaseHP(int value, Transform location)
     {
         if ((playerHPLevel + value) < sprites.Length)
         {
             playerHPLevel += value;
+        }
+        else
+        {
+            GameController.GetInstance().AddScore(GameController.GetInstance().bonusScore);
+            FloatingTextController.instance.CreateFloatingText("+" + GameController.GetInstance().bonusScore.ToString(), location);
         }
 
         UpdateHPLevel();
