@@ -41,7 +41,7 @@ public class Attacker : MonoBehaviour
 
     public void AttackPlayer()
     {
-        //hpManager.DecreaseHP(damage);
+        hpManager.DecreaseHP(damage);
         gameController.AddScore(score);
     }
 
