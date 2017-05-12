@@ -31,6 +31,17 @@ public class ScreenManager : MonoBehaviour {
 
     public void Show(Type uiscreenType)
     {
+        AudioManager.instance.Stop();
+
+        if(uiscreenType == typeof(HighscorePopup))
+        {
+            AudioManager.instance.PlaySound("highscore");
+        }
+        else if(uiscreenType == typeof(GameoverPopUp))
+        {
+            AudioManager.instance.PlaySound("gameover");
+        }
+
         UIScreen newScreen = screens[uiscreenType];
 
         //We check if the stack is not empty, because it's empty at the start
@@ -48,6 +59,8 @@ public class ScreenManager : MonoBehaviour {
 
     public void Hide()
     {
+        AudioManager.instance.Stop();
+
         UIScreen oldScreen = stack.Pop();//Pop() returns the top object of a Stack AND removes it from the stack!
         oldScreen.gameObject.SetActive(false);
 

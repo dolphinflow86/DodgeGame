@@ -6,6 +6,7 @@ using UnityEngine;
 public class Sound
 {
     public string name;
+    public bool loop = false;
     public AudioClip clip;
 
     [Range(0f,1f)]
@@ -21,8 +22,18 @@ public class Sound
 
     public void Play()
     {
+        if (source == null)
+            return;
         source.volume = volume;
+        source.loop = loop;
         source.Play();
+    }
+
+    public void Stop()
+    {
+        if (source == null)
+            return;
+        source.Stop();
     }
 }
 
@@ -36,7 +47,14 @@ public class AudioManager : MonoBehaviour
 
     private void Awake()
     {
-        instance = this;
+        if(instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Debug.LogWarning("You have 2 AudioManagers in the scene!!");
+        }
     }
 
     private void Start()
@@ -47,8 +65,6 @@ public class AudioManager : MonoBehaviour
             soundObject.transform.parent = (this.transform);
             sounds[i].SetSource(soundObject.AddComponent<AudioSource>());
         }
-        
-
     }
 
     public void PlaySound(string name)
@@ -58,14 +74,19 @@ public class AudioManager : MonoBehaviour
             if (sounds[i].name == name)
             {
                 sounds[i].Play();
-                Debug.Log("sound played");
                 return;
             }
 
         }
-         
-            Debug.Log("Nothing to play00");
-        
+            Debug.LogWarning("Nothing to play!!");
+    }
+
+    public void Stop()
+    {
+        for (int i = 0; i < sounds.Length; i++)
+        {
+            sounds[i].Stop();
+        }
     }
 
 }

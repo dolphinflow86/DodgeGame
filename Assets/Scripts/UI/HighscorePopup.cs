@@ -7,7 +7,6 @@ public class HighscorePopup : UIScreen {
 
     void OnEnable()
     {
-        
         GameController.GetInstance().showCursor = true;
         Time.timeScale = 0;
     }
@@ -19,7 +18,6 @@ public class HighscorePopup : UIScreen {
 
     public void GetInput(string nameInput)
     {
-        Debug.Log(nameInput);
         GameController.GetInstance().SaveHighScore(nameInput);
         ScreenManager.instance.Hide();
         ScreenManager.instance.Show(typeof(GameoverPopUp));
@@ -29,7 +27,6 @@ public class HighscorePopup : UIScreen {
     {
         InputField input = GetComponent<InputField>();
         GameController.GetInstance().SaveHighScore(input.text);
-        Debug.Log(input.text);
         ScreenManager.instance.Hide();
         ScreenManager.instance.Show(typeof(GameoverPopUp));
     }
