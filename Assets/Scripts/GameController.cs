@@ -164,7 +164,7 @@ public class GameController : MonoBehaviour {
         }
 
         ScoreInfo lastInfo = scoreInfoList[scoreInfoList.Count-1];
-
+        
         if(lastInfo.score < totalScore)
         {
             return (true);
@@ -175,9 +175,22 @@ public class GameController : MonoBehaviour {
 
     public void SaveHighScore(string playerName)
     {
-        scoreInfoList.Add(new ScoreInfo(playerName, totalScore));
+        if (10 <= scoreInfoList.Count)
+        {
+            scoreInfoList[9].name = playerName;
+            scoreInfoList[9].score = totalScore;
+        }
+        else
+        {
+            scoreInfoList.Add(new ScoreInfo(playerName, totalScore));
+        }
+
         scoreInfoList.Sort((s1, s2) => s1.score.CompareTo(s2.score));
         scoreInfoList.Reverse();
+
+        // bold the score
+        int findIndex = scoreInfoList.FindIndex(x => x.name.Contains(playerName));
+        highScoreTextUI[findIndex].color = Color.blue;
 
         // convert a ScoreInfo to the one string
         string scoreString = "";
