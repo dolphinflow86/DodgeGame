@@ -149,41 +149,56 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stageInfo:
-  - rateOfSpawn: 2.5
-    enemySpawnRatio: 9.9
-    badMissileSpeed: 2
-    goodMissileSpeed: 2
-    stageDurationSecond: 10
-  - rateOfSpawn: 2
+  - rateOfSpawn: 3.5
+    enemySpawnRatio: 9.8
+    badMissileSpeed: 1.7
+    goodMissileSpeed: 1.7
+    stageDurationSecond: 11
+  - rateOfSpawn: 2.8
+    enemySpawnRatio: 9.8
+    badMissileSpeed: 1.9
+    goodMissileSpeed: 1.9
+    stageDurationSecond: 13
+  - rateOfSpawn: 2.2
     enemySpawnRatio: 9.9
     badMissileSpeed: 2.2
     goodMissileSpeed: 2.2
-    stageDurationSecond: 13
-  - rateOfSpawn: 1.5
+    stageDurationSecond: 13.5
+  - rateOfSpawn: 0.2
+    enemySpawnRatio: 0
+    badMissileSpeed: 3.5
+    goodMissileSpeed: 3.5
+    stageDurationSecond: 1.2
+  - rateOfSpawn: 2
     enemySpawnRatio: 9.9
     badMissileSpeed: 2.5
     goodMissileSpeed: 2.5
-    stageDurationSecond: 13
-  - rateOfSpawn: 1.2
-    enemySpawnRatio: 9.9
-    badMissileSpeed: 2.7
-    goodMissileSpeed: 2.7
-    stageDurationSecond: 15
-  - rateOfSpawn: 0.5
-    enemySpawnRatio: 0
-    badMissileSpeed: 3
-    goodMissileSpeed: 3
-    stageDurationSecond: 1.1
-  - rateOfSpawn: 0.8
+    stageDurationSecond: 15.5
+  - rateOfSpawn: 1.8
     enemySpawnRatio: 9.9
     badMissileSpeed: 3
     goodMissileSpeed: 3
     stageDurationSecond: 20
-  - rateOfSpawn: 1
-    enemySpawnRatio: 1
-    badMissileSpeed: 1
-    goodMissileSpeed: 1
-    stageDurationSecond: 1000000
+  - rateOfSpawn: 0.2
+    enemySpawnRatio: 0
+    badMissileSpeed: 5
+    goodMissileSpeed: 5
+    stageDurationSecond: 2
+  - rateOfSpawn: 1.5
+    enemySpawnRatio: 9.9
+    badMissileSpeed: 3.5
+    goodMissileSpeed: 3.5
+    stageDurationSecond: 40
+  - rateOfSpawn: 0.2
+    enemySpawnRatio: 0
+    badMissileSpeed: 5.5
+    goodMissileSpeed: 5.5
+    stageDurationSecond: 3
+  - rateOfSpawn: 1.2
+    enemySpawnRatio: 9.8
+    badMissileSpeed: 3.7
+    goodMissileSpeed: 3.7
+    stageDurationSecond: 1e+14
   showCursor: 0
   timeScore: 10
   highScoreTextUI:
