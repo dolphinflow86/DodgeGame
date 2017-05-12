@@ -34,7 +34,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1307443864228292}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.967195, y: 1.6619978, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -53,14 +53,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - name: highscore
+    loop: 0
     clip: {fileID: 8300000, guid: 8378b8d8d89a8cb44b3f227d19898035, type: 3}
     volume: 1
   - name: bad
+    loop: 0
     clip: {fileID: 8300000, guid: 111d71cb5ce70634693699791f072788, type: 3}
     volume: 1
   - name: good
+    loop: 0
     clip: {fileID: 8300000, guid: 83adce2f20c5ce646a4791d7a4745dde, type: 3}
     volume: 1
   - name: gameover
+    loop: 0
     clip: {fileID: 8300000, guid: 1357ef7c374bba14f9cce25eaf8c92b9, type: 3}
+    volume: 1
+  - name: music
+    loop: 1
+    clip: {fileID: 8300000, guid: 4083f9ee6dba07f4eb0c7d4906e7003e, type: 3}
     volume: 1
