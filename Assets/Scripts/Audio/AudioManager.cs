@@ -55,17 +55,16 @@ public class AudioManager : MonoBehaviour
         {
             Debug.LogWarning("You have 2 AudioManagers in the scene!!");
         }
-    }
 
-    private void Start()
-    {
-        for (int i=0; i < sounds.Length; i++)
+        for (int i = 0; i < sounds.Length; i++)
         {
             GameObject soundObject = new GameObject("Sound_" + i + "_" + sounds[i].name);
             soundObject.transform.parent = (this.transform);
             sounds[i].SetSource(soundObject.AddComponent<AudioSource>());
         }
     }
+
+  
 
     public void PlaySound(string name)
     {

@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 public class MenuScreen : UIScreen {
 
     private void OnEnable()
-    {
+    {        
+        AudioManager.instance.PlaySound("menu");
         GameController.GetInstance().showCursor = true;
         GameController.GetInstance().LoadHighScore();
     }
@@ -15,6 +16,7 @@ public class MenuScreen : UIScreen {
 
     public void OnStartGameButton()
     {
+        AudioManager.instance.PlaySound("button");
         GameController.GetInstance().ResetStage();
         ScreenManager.instance.Show(typeof(GameScreen));
         SceneManager.LoadScene("Game", LoadSceneMode.Additive);

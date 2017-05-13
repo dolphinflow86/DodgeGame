@@ -25,7 +25,7 @@ public class ScreenManager : MonoBehaviour {
             screen.gameObject.SetActive(false);
            
         }
-        Show(typeof(MenuScreen));
+        Show(typeof(MenuScreen));        
 
     }
 
@@ -40,6 +40,10 @@ public class ScreenManager : MonoBehaviour {
         else if(uiscreenType == typeof(GameoverPopUp))
         {
             AudioManager.instance.PlaySound("gameover");
+        }        
+        else if (uiscreenType == typeof(PausePopUp))
+        {
+            AudioManager.instance.PlaySound("pause");
         }
 
         UIScreen newScreen = screens[uiscreenType];

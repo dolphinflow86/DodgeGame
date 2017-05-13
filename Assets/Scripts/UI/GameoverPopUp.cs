@@ -19,11 +19,11 @@ public class GameoverPopUp : UIScreen {
     }
 
     public void OnYesButton()
-    {
+    {        
         GameController.GetInstance().ResetStage();
         ScreenManager.instance.Hide();
         SceneManager.UnloadSceneAsync(1);
-        SceneManager.LoadScene("Game", LoadSceneMode.Additive);
+        SceneManager.LoadScene("Game", LoadSceneMode.Additive);        
     }
 
     public void OnNoButton()
